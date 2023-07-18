@@ -12,7 +12,7 @@ public class BaseTest extends Flib implements IautoConstant{
    //It is use to open & close the browser
 	
 	static WebDriver driver;
-	public void openBrowser() throws IOException
+	public void setUp() throws IOException
 	{
 		 Flib flib = new Flib();
 		 String browserValue = flib.readPropertyData(PROP_PATH, "Browser");
@@ -52,7 +52,7 @@ public class BaseTest extends Flib implements IautoConstant{
 		 
 	}
 	
-	public void closeBrowser()
+	public void tearDown()
 	{
 		driver.quit();
 	}
